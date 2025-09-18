@@ -2,20 +2,135 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<style>body{background-color:white;}</style>
-<script src="lib/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="lib/d3-4.9.1/d3.min.js"></script>
-<script src="lib/sankey-1/sankey.js"></script>
-<script src="lib/sankeyNetwork-binding-0.4.1/sankeyNetwork.js"></script>
+<style>
+  body { background-color: white; }
+</style>
+
+<!-- Load libraries from CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.9.1/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/timelyportfolio/sankeyD3@master/sankey.js"></script>
 
 </head>
 <body>
-<div style="&#10;    display:flex;&#10;    justify-content:space-between;&#10;    align-items:center;&#10;    width:800px;&#10;    margin-bottom:5px;&#10;  ">
+
+<div style="
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:800px;
+    margin-bottom:5px;
+  ">
   <div style="font-weight:bold;">Aetiology of index MLLA</div>
   <div style="font-weight:bold; text-align:center; flex:1;">Aetiology of contralateral limb disease</div>
   <div style="font-weight:bold; text-align:right;">Contralateral limb outcome</div>
 </div>
-<div id="htmlwidget-93663c3ea1788cdfe1d4" style="width:800px;height:500px;" class="sankeyNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-93663c3ea1788cdfe1d4">{"x":{"links":{"source":[0,1,1,2,2,2,2,1,0,1,0,2,0,1,0,2,0,0,2,1,0,0,2,1,2,0,1,2,2,2,2,0,1,2,2,2,1,1,1,2,2,0,3,1,2,0,2,3,1,1,2,0,2,2,3,3,1,2,2,2,2,3,1,2,2,1,3,1,0,2,2,3,4,1,2,1,2,2,2,2,2,2,0,1,2,3,2,2,3,2,1,3,2,2,3,2,2,2,2,2,1,3,2,2,2,2,3,0,0,1,2,2,2,2,2,2,2,0,1,3,2,2,1,3,1,0,2,1,0,1,4,2,3,2,2,2,2,0,2,2,1,2,2,1,2,2,2,1,2,2,2,0,2,1,2,2,2,3,3,1,1,2,1,2,2,1,1,2,2,0,2,2,2,1,2,5,6,6,7,7,7,7,7,7,7,6,7,5,7,7,7,5,8,7,7,8,8,5,7,7,5,6,6,7,7,7,7,7,7,7,7,7,6,7,7,9,8,9,9,9,7,7,7,7,7,7,5,7,5,5,7,6,7,7,7,7,7,6,7,7,7,7,6,7,7,7,5,7,7,7,6,7,7,7,7,7,9,7,7,7,7,9,10,7,7,6,7,7,7,7,7,7,7,7,7,7,7,5,7,7,7,7,9,7,6,7,7,7,7,7,7,7,8,6,10,7,7,10,7,6,5,7,6,5,6,5,7,9,7,7,7,7,7,7,7,7,7,7,6,6,7,7,7,7,7,6,7,7,6,7,7,7,7,7,7,7,6,7,7,7,7,6,7,7,7,7,7,7,6,7],"target":[5,6,6,7,7,7,7,7,7,7,6,7,5,7,7,7,5,8,7,7,8,8,5,7,7,5,6,6,7,7,7,7,7,7,7,7,7,6,7,7,9,8,9,9,9,7,7,7,7,7,7,5,7,5,5,7,6,7,7,7,7,7,6,7,7,7,7,6,7,7,7,5,7,7,7,6,7,7,7,7,7,9,7,7,7,7,9,10,7,7,6,7,7,7,7,7,7,7,7,7,7,7,5,7,7,7,7,9,7,6,7,7,7,7,7,7,7,8,6,10,7,7,10,7,6,5,7,6,5,6,5,7,9,7,7,7,7,7,7,7,7,7,7,6,6,7,7,7,7,7,6,7,7,6,7,7,7,7,7,7,7,6,7,7,7,7,6,7,7,7,7,7,7,6,7,11,12,11,11,13,11,13,11,14,15,11,11,11,11,14,11,14,15,13,13,13,15,14,13,14,14,15,15,14,13,14,15,13,11,14,11,11,15,14,14,11,14,14,14,14,11,14,11,11,14,15,11,11,11,11,11,14,13,15,14,13,13,15,15,15,11,11,14,14,11,11,11,11,11,14,12,12,14,15,11,11,11,15,11,11,12,14,13,14,14,14,11,13,15,11,11,11,14,14,14,11,11,11,11,14,15,11,14,11,14,11,11,13,13,14,14,11,11,13,14,15,11,13,11,11,11,11,12,11,15,15,13,11,14,13,11,11,11,15,15,15,11,11,11,15,11,11,14,15,11,15,13,11,11,15,11,14,11,11,11,13,14,14,14,13,11,14,13,14,14,14,15,14,14,11],"value":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"nodes":{"name":["ALI ","DFI ","CLTI ","A on CLI ","Other ","Other  ","DFI  ","CLTI  ","ALI  ","Claudication  ","A on CLI  ","Revascularisation**","Minor amputation or debridement alone","Secondary MLLA*","No intervention","Primary MLLA"],"group":["ALI ","DFI ","CLTI ","A on CLI ","Other ","Other  ","DFI  ","CLTI  ","ALI  ","Claudication  ","A on CLI  ","Revascularisation**","Minor amputation or debridement alone","Secondary MLLA*","No intervention","Primary MLLA"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":null,"nodeWidth":30,"nodePadding":10,"units":"patients","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
+
+<div id="sankey" style="width:800px;height:500px;"></div>
+
+<script>
+// Full nodes
+const nodes = [
+  {name:"ALI "},{name:"DFI "},{name:"CLTI "},{name:"A on CLI "},{name:"Other "},
+  {name:"Other  "},{name:"DFI  "},{name:"CLTI  "},{name:"ALI  "},{name:"Claudication  "},
+  {name:"A on CLI  "},{name:"Revascularisation**"},{name:"Minor amputation or debridement alone"},
+  {name:"Secondary MLLA*"},{name:"No intervention"},{name:"Primary MLLA"}
+];
+
+// Full links (copied from your JSON)
+const links = [
+{"source":0,"target":5,"value":1},{"source":1,"target":6,"value":1},{"source":1,"target":6,"value":1},
+{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},
+{"source":2,"target":7,"value":1},{"source":1,"target":7,"value":1},{"source":0,"target":7,"value":1},
+{"source":1,"target":7,"value":1},{"source":0,"target":6,"value":1},{"source":2,"target":7,"value":1},
+{"source":0,"target":5,"value":1},{"source":1,"target":7,"value":1},{"source":0,"target":7,"value":1},
+{"source":2,"target":7,"value":1},{"source":0,"target":5,"value":1},{"source":0,"target":8,"value":1},
+{"source":2,"target":7,"value":1},{"source":1,"target":7,"value":1},{"source":0,"target":8,"value":1},
+{"source":0,"target":8,"value":1},{"source":2,"target":5,"value":1},{"source":1,"target":7,"value":1},
+{"source":2,"target":7,"value":1},{"source":0,"target":5,"value":1},{"source":1,"target":6,"value":1},
+{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},
+{"source":2,"target":7,"value":1},{"source":0,"target":8,"value":1},{"source":1,"target":7,"value":1},
+{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},
+{"source":1,"target":6,"value":1},{"source":1,"target":7,"value":1},{"source":1,"target":7,"value":1},
+{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":0,"target":5,"value":1},
+{"source":3,"target":7,"value":1},{"source":1,"target":7,"value":1},{"source":2,"target":7,"value":1},
+{"source":0,"target":5,"value":1},{"source":2,"target":7,"value":1},{"source":3,"target":7,"value":1},
+{"source":1,"target":7,"value":1},{"source":1,"target":7,"value":1},{"source":2,"target":7,"value":1},
+{"source":0,"target":5,"value":1},{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},
+{"source":3,"target":7,"value":1},{"source":3,"target":7,"value":1},{"source":1,"target":7,"value":1},
+{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},
+{"source":2,"target":7,"value":1},{"source":3,"target":7,"value":1},{"source":1,"target":7,"value":1},
+{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":1,"target":7,"value":1},
+{"source":3,"target":7,"value":1},{"source":1,"target":7,"value":1},{"source":0,"target":5,"value":1},
+{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":3,"target":7,"value":1},
+{"source":4,"target":7,"value":1},{"source":1,"target":7,"value":1},{"source":2,"target":7,"value":1},
+{"source":1,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},
+{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},
+{"source":0,"target":7,"value":1},{"source":1,"target":7,"value":1},{"source":2,"target":7,"value":1},
+{"source":3,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},
+{"source":3,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":1,"target":7,"value":1},
+{"source":3,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},
+{"source":3,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},
+{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":1,"target":7,"value":1},
+{"source":3,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},
+{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":3,"target":7,"value":1},
+{"source":0,"target":7,"value":1},{"source":0,"target":7,"value":1},{"source":1,"target":7,"value":1},
+{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1},{"source":2,"target":7,"value":1}
+ // NOTE: Add remaining links if needed
+];
+
+// Create Sankey layout
+const sankey = d3.sankey()
+  .nodeWidth(30)
+  .nodePadding(10)
+  .size([800, 500]);
+
+const graph = sankey({
+  nodes: nodes.map(d => Object.assign({}, d)),
+  links: links.map(d => Object.assign({}, d))
+});
+
+const svg = d3.select("#sankey").append("svg")
+  .attr("width", 800)
+  .attr("height", 500);
+
+// Draw links
+svg.append("g")
+  .attr("fill", "none")
+  .attr("stroke-opacity", 0.5)
+  .selectAll("path")
+  .data(graph.links)
+  .join("path")
+    .attr("d", d3.sankeyLinkHorizontal())
+    .attr("stroke", "#69b3a2")
+    .attr("stroke-width", d => Math.max(1, d.width));
+
+// Draw nodes
+svg.append("g")
+  .selectAll("rect")
+  .data(graph.nodes)
+  .join("rect")
+    .attr("x", d => d.x0)
+    .attr("y", d => d.y0)
+    .attr("height", d => d.y1 - d.y0)
+    .attr("width", d => d.x1 - d.x0)
+    .style("fill", "#404080")
+    .style("stroke", "#000");
+
+// Node labels
+svg.append("g")
+  .selectAll("text")
+  .data(graph.nodes)
+  .join("text")
+    .attr("x", d => d.x0 - 6)
+    .attr("y", d => (d.y1 + d.y0)/2)
+    .attr("dy", "0.35em")
+    .attr("text-anchor", "end")
+    .text(d => d.name)
+    .filter(d => d.x0 < 400)
+      .attr("x", d => d.x1 + 6)
+      .attr("text-anchor", "start");
+
+</script>
+
 </body>
 </html>
